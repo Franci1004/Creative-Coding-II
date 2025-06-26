@@ -14,6 +14,7 @@ io.on('connection', (socket) => {
   });
 });
 
-http.listen(3000, () => {
+http.listen(3000, '0.0.0.0', () => {
   console.log('🚀 Server läuft auf http://localhost:3000');
 });
+
