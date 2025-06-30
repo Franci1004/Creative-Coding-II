@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8">
+    <title>Francis Bar</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <a-scene>
+
+      <a-assets>
+        <audio id="jazzSound" src="jazz-lounge-elevator-music-331055.mp3"></audio>
+      </a-assets>      
+
+      <!-- Kamera mit Maus-/Touchsteuerung -->
+      <a-entity id="camRig">
+        <a-camera look-controls wasd-controls position="0 1.6 0"></a-camera>
+      </a-entity>
+
+      <!-- Maus-Cursor für Klicks -->
+      <a-entity 
+        cursor="rayOrigin: mouse" 
+        raycaster="objects: .clickable">
+      </a-entity>
+
+      <!-- 360° Hintergrund -->
+      <a-sky src="bar2.png" rotation="0 -100 0"></a-sky>
+
+      <!-- Menü-Button -->
+      <a-entity id="menuButton"
+                geometry="primitive: plane; height: 0.6; width: 1"
+                material="color: #293f90"
+                text="value: open cocktail card; color: white; align: center"
+                position="0 2 -2"
+                class="clickable">
+      </a-entity>
+
+      <!-- Getränkekarte -->
+      <a-entity id="karte"
+                geometry="primitive: plane; height: 1.5; width: 1"
+                material="src: cocktailcard.png"
+                position="0 2 -1.9"
+                visible="false">
+      </a-entity>
+
+      <!-- Getränke Button über dem Drink: Aperol Spritz -->
+      <a-entity id="btn1" class="drink-button clickable"
+        geometry="primitive: plane; width: 0.6; height: 0.3"
+        material="color: #ee6002"
+        position="-1.5 1.0 -1.5">
+
+      <a-text value="Aperol Spritz"
+        align="center"
+        color="white"
+        scale="0.3 0.3 0.3"
+        position="0 0 0">
+      </a-text>
+
+      </a-entity>
+
+      <!-- Getränke Button über dem Drink: Mojito -->
+      <a-entity id="btn2" class="drink-button clickable"
+        geometry="primitive: plane; width: 0.6; height: 0.3"
+        material="color: #738c26"
+        position="0 1.0 -1.5">
+
+      <a-text value="Mojito"
+        align="center"
+        color="white"
+        scale="0.3 0.3 0.3"
+        position="0 0 0.01">
+      </a-text>
+
+      </a-entity>
+
+      <!-- Getränke Button über dem Drink: Passionfruit Margarita -->
+      <a-entity id="btn3" class="drink-button clickable"
+        geometry="primitive: plane; width: 0.6; height: 0.3"
+        material="color: #ec4c38"
+        position="1.5 1.0 -1.5">
+
+      <a-text value="Passionfruit\nMargarita"
+        align="center"
+        color="white"
+        scale="0.3 0.3 0.3"
+        position="0 0 0.01">
+      </a-text>
+
+      </a-entity>
+
+
+        <!-- Infotafel 1 Aperol Spritz -->
+        <a-entity id="tafel1"
+        geometry="primitive: plane; width: 0.9; height: 0.6"
+        material="color: #ee6002; opacity: 0.8"
+        text="value: Aperol Spritz\nIngredients: Aperol, Prosecco, Soda\nPrice: 7,00$; align: center; color: white"
+        position="-1.5 1.6 -1.5"
+        visible="false">
+        </a-entity>
+
+        <!-- Infotafel 2 Mojito -->
+        <a-entity id="tafel2"
+        geometry="primitive: plane; width: 0.9; height: 0.6"
+        material="color: #738c26; opacity: 0.8"
+        text="value: Mojito\nIngredients: Mint, Rum, Lime, Sugar, Soda\nPrice: 8,00$; align: center; color: white"
+        position="0 1.6 -1.5"
+        visible="false">
+        </a-entity>
+
+        <!-- Infotafel 3 Passionfruit Margarita -->
+        <a-entity id="tafel3"
+        geometry="primitive: plane; width: 0.9; height: 0.6"
+        material="color: #ec4c38; opacity: 0.8"
+        text="value: Passionfruit Margarita \nIngredients: Tequila, Passionfruit Liquer, Limejuice\nPrice: 8,00$; align: center; color: white"
+        position="1.5 1.6 -1.5"
+        visible="false">
+        </a-entity>
+
+    </a-scene>
+  </body>
+</html>
