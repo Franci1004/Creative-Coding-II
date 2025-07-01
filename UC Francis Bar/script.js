@@ -1,4 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
+  
+  //Referenzen auf die Getränkekarte, den Button und den Sound
   const karte = document.getElementById('karte');
   const menuButton = document.getElementById('menuButton');
   const sound = document.getElementById('jazzSound');
@@ -13,6 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
     const neuerText = karteOffen ? 'close cocktail card' : 'open cocktail card';
     menuButton.setAttribute('text', 'value: ' + neuerText + '; color: white; align: center');
 
+  // Musik startet/stoppt, wenn die Karte geöffnet/geschlossen wird
     if (karteOffen) {
       sound.currentTime = 0;
       sound.play();
@@ -29,6 +32,7 @@ window.addEventListener('DOMContentLoaded', () => {
     { buttonId: 'btn3', tafelnId: 'tafel3', offen: false }
   ];
 
+  // Für jedes Button-Tafel-Paar: Wenn der Button geklickt wird → Sichtbarkeit der Tafel wechseln (an/aus)
   tafeln.forEach(pair => {
     const btn = document.getElementById(pair.buttonId);
     const tfl = document.getElementById(pair.tafelnId);
